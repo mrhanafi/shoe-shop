@@ -7,7 +7,7 @@ const ROUTES = ["Home", "About", "Services", "Pricing", "Contact"];
 function Nav() {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
   return (
-    <nav className="flex flex-wrap justify-between items-center">
+    <nav className="z-10 relative flex flex-wrap justify-between items-center">
       {/* Logo */}
       <a href="#">
         <NikeLogo className="h-20 w-20" />
@@ -28,7 +28,7 @@ function Nav() {
           {ROUTES.map((route, i) => {
             return (
               <li
-                className={`py-2 px-3 cursor-pointer ${i === 0 ? "bg-blue-500 text-white rounded-md lg:bg-transparent lg:text-blue-500" : "hover:bg-gray-100"}`}
+                className={`lg:hover:bg-transparent lg:hover:text-blue-500 py-2 px-3 cursor-pointer ${i === 0 ? "bg-blue-500 text-white rounded-md lg:bg-transparent lg:text-blue-500" : "hover:bg-gray-100"} ${(i == 3 || i == 4) && "lg:text-white"}`}
                 key={route}
               >
                 {route}
@@ -38,7 +38,7 @@ function Nav() {
         </ul>
       </div>
       {/* cart btn */}
-      <div className="fixed left-4 bottom-4 lg:static">
+      <div className="fixed left-4 bottom-4 lg:static lg:mr-8">
         <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md cursor-pointer">
           <TbShoppingBag />
         </div>
