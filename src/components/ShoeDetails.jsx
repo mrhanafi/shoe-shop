@@ -1,5 +1,7 @@
 import React from "react";
 import nike1 from "../assets/images/n1-min.png";
+import Select from "./Select";
+import { QTY, SIZES } from "../constant";
 
 function ShoeDetails() {
   return (
@@ -14,7 +16,11 @@ function ShoeDetails() {
       <div className="flex-1 space-y-6">
         <div className="text-5xl font-black md:text-9xl">Nike Air max 270</div>
         <div className="font-medium md:text-xl">{`The Nike Air Max 270 is a lifestyle shoe that's sure to turn heads with its vibrant color gradient`}</div>
-        <div className="text-3xl font-extrabold md:text-6xl">RM 100</div>
+        <div className="flex space-x-6">
+          <div className="text-3xl font-extrabold md:text-6xl">RM 100</div>
+          <Select title={"QTY"} options={QTY} />
+          <Select title={"SIZE"} options={SIZES} />
+        </div>
         {/* btn & details */}
         <div className="space-x-10">
           <button className="h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700">
