@@ -4,7 +4,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { TbShoppingBag } from "react-icons/tb";
 
 const ROUTES = ["Home", "About", "Services", "Pricing", "Contact"];
-function Nav() {
+function Nav({ onClickShoppingBtn }) {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
   return (
     <nav className="z-10 relative flex flex-wrap justify-between items-center">
@@ -38,7 +38,10 @@ function Nav() {
         </ul>
       </div>
       {/* cart btn */}
-      <div className="btn-press-anim fixed left-4 bottom-4 lg:static lg:mr-8">
+      <div
+        className="btn-press-anim fixed left-4 bottom-4 lg:static lg:mr-8"
+        onClick={onClickShoppingBtn}
+      >
         <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md cursor-pointer">
           <TbShoppingBag />
         </div>
